@@ -1,3 +1,6 @@
+<?php
+include "db.php";
+?>
 <!DOCTYPE html>
 <html lang="pt-br">
 
@@ -17,9 +20,9 @@
         <div id="caixa-chat">
             <div id="chat">
                 <div id="dados-chat">
-                    <span>Grazziano: </span>
-                    <span>Texto da Mensagem: </span>
-                    <span>Hora: </span>
+                    <span style="color: #0B6121;">Grazziano: </span>
+                    <span style="color: #1c62c4;">Texto da Mensagem: </span>
+                    <span style="color: #0B6121; float: right;">Hora: </span>
                 </div>
             </div>
         </div>
