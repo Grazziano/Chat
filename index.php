@@ -8,6 +8,8 @@
     <title>Chat</title>
 
     <link rel="stylesheet" href="estilos.css">
+    <!-- Fonte -->
+    <link href="https://fonts.googleapis.com/css?family=Mukta+Vaani&display=swap" rel="stylesheet">
 </head>
 
 <body>
