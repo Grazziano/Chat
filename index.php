@@ -19,7 +19,7 @@ include "db.php";
     <div id="conteudo">
         <div id="caixa-chat">
             <div id="chat">
-                
+                <!-- Local onde vai chamar o chat -->
             </div>
         </div>
 
@@ -33,7 +33,8 @@ include "db.php";
         if (isset($_POST['enviar'])) {
             $nome = $_POST['nome'];
             $mensagem = $_POST['mensagem'];
-            $consulta = "INSERT INTO tb_chat (nome, mensagem) VALUES ('$nome', '$mensagem')";
+            $data = date('Y-m-d H:m:s');
+            $consulta = "INSERT INTO tb_chat (nome, mensagem, data) VALUES ('$nome', '$mensagem', '$data')";
             $executar = $conexao->query($consulta);
 
             if ($executar) {
