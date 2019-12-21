@@ -42,6 +42,19 @@ include "db.php";
             <textarea name="mensagem" id="" cols="30" rows="10" placeholder="Insira uma mensagem"></textarea>
             <input type="submit" name="enviar" value="Enviar">
         </form>
+
+        <?php
+        if (isset($_POST['enviar'])) {
+            $nome = $_POST['nome'];
+            $mensagem = $_POST['mensagem'];
+            $consulta = "INSERT INTO tb_chat (nome, mensagem) VALUES ('$nome', '$mensagem')";
+            $executar = $conexao->query($consulta);
+
+            if ($executar) {
+                echo "<embed loop='false' src='beep.mp3' hidden='true' autoplay='true'>";
+            }
+        }
+        ?>
     </div>
 
 </body>
