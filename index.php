@@ -19,21 +19,7 @@ include "db.php";
     <div id="conteudo">
         <div id="caixa-chat">
             <div id="chat">
-
-                <?php
-                $consulta = "SELECT * FROM tb_chat ORDER BY id DESC";
-                $executar = $conexao->query($consulta);
-
-                while ($linha = $executar->fetch_array()) :
-                ?>
-
-                    <div id="dados-chat">
-                        <span style="color: #0B6121;"><?php echo $linha['nome']; ?></span>
-                        <span style="color: #1c62c4;"><?php echo $linha['mensagem']; ?></span>
-                        <span style="color: #0B6121; float: right;"><?php echo $linha['data'] ?></span>
-                    </div>
-
-                <?php endwhile; ?>
+                
             </div>
         </div>
 
@@ -57,6 +43,24 @@ include "db.php";
         ?>
     </div>
 
+    <script type="text/javascript">
+        function ajax() {
+            var req = new XMLHttpRequest();
+            req.onreadystatechange = function() {
+
+                if (req.readyState == 4 && req.status == 200) {
+                    document.getElementById('chat').innerHTML = req.responseText;
+                }
+            }
+
+            req.open('GET', 'chat.php', true);
+            req.send();
+        }
+
+        setInterval(function() {
+            ajax();
+        }, 1000);
+    </script>
 </body>
 
 </html>
